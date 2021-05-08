@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+        h1 #{title}
+        ul.list-group
+            each opc_client, i in client 
+                li.list-group-item
+                    h4 Endpoint PLC 
+                    a(href="/opc_client/"+opc_client._id)= opc_client.endpoint
+                li.list-group-item                        
+                    h5 added nodes:
+                    a #{opc_client.nodeId}
+                    form(method='POST', action='/opcua/nodeid')
+                        #form-group 
+                        input.btn.btn-primary(type='submit',value='Read')
+                        input.btn.btn-primary(type='submit',value='Write')
+                li.list-group-item
+                    h5 value:
+                    a #{opc_client.value}
+                .container 
+                    .btn.btn-primary(href='/client/connect'+opc_client._id,type='submit',value='Submit') Connect
+                    .btn.btn-secondary.active(role='button' aria-pressed='true') try   
+                

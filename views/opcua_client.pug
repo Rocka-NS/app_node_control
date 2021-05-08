@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+        h1 #{title}
+        form(method='POST', action='/opcua/client')
+            #form-group 
+                label endpoint: 
+                input.form-control(name='endpoint', type='text')
+            //input.btn.btn-primary(type='submit',value='Submit')           
+            #form-group 
+                label nodeId: 
+                input.form-control(name='nodeId', type='text')
+            //input.btn.btn-primary(type='submit',value='Submit')  
+            #form-group 
+                label dataType: 
+                input.form-control(name='dataType', type='text')
+            //input.btn.btn-primary(type='submit',value='Submit')  
+            #form-group 
+                label endpoint: 
+                input.form-control(name='value', type='text')
+            input.btn.btn-primary(type='submit',value='Submit')  

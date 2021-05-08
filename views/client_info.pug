@@ -1,0 +1,7 @@
+extends layout 
+
+block content
+    h1= client.endpoint
+    hr
+    a.btn.btn-primary(href='/client/edit/'+client._id) Edit
+    a.btn.btn-danger.delete-session(href='/',data-id=client._id) Delete

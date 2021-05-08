@@ -1,0 +1,9 @@
+extends layout 
+
+block content
+        h1 #{title}
+        form(method='POST', action='/client/edit/'+client._id)
+            #form-group 
+                label endpoint: 
+                input.form-control(name='endpoint', type='text', value=client.entpoint)
+            input.btn.btn-primary(type='submit',value='Submit')           

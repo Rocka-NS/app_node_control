@@ -1,0 +1,9 @@
+extends layout 
+
+block content
+        h1 #{title}
+        form(method='POST', action='/rest/client')
+            #form-group 
+                label endpoint: 
+                input.form-control(name='endpoint', type='text')
+            input.btn.btn-primary(type='submit',value='Submit')           
