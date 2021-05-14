@@ -135,7 +135,10 @@ app.post('/client/connect/:id', function(req, res) {
     client.nodeId = req.body.nodeId;
     client.value = req.body.value;
 
-    var fooMod = require('.//opcua_client.js')
+    var fooMod = require('.//opcua_client.js');
+    fooMod(function(foo){
+        
+    });
     client.save(function(err){
         if(err){
             console.log(err);
